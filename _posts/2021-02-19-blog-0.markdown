@@ -1,0 +1,128 @@
+---
+layout: post
+title:  "CIT481 Blog 0"
+date:   2021-02-19 19:51:41 -0700
+categories: jekyll blogs
+author: "Behzad"
+---
+
+## System Design and Implementation
+This blog has been created to present my activities, assignment and studies in my CIT System Design and Implementation class. My blog is hosted by GitHub pages and was made by Jekyll. 
+
+# AWS Cloud Computing
+Before I start AWS Cloud Architecting study or other practices in IT automation and system design, I would like to do a review of some important subjects in AWS cloud that I studied in previous semester.
+
+# Amazon Elastic Compute Cloud (Amazon EC2)
+Amazon EC2 provides virtual machines where we can host the same kinds of applications that we might run on a traditional on-premises server. EC2 instances can support a variety of workloads. Common uses for EC2 instances include:
+
+* Application servers
+* Web servers
+* Database servers
+* Game servers
+* Mail servers
+* Media servers
+* Catalog servers
+* File servers
+* Computing servers
+* Proxy servers
+
+With Amazon EC2, we can launch any number of instances of any size into any Availability Zone anywhere in the world in a matter of minutes. Instances launch from Amazon Machine Images (AMIs), which are effectively virtual machine templates. An Amazon Machine Image (AMI)provides information that is required to launch an EC2instance. An AMI includes the following components:
+
+* A template for the root volume of the instance.
+* Launch permissions that control which AWS accounts can use the AMI.
+* A block device mapping that specifies the volumes to attach to the instance when it is launched.
+
+# Amazon VPC
+Many of the concepts of an on-premises network apply to a cloud-based network, but much of the complexity of setting up a network has been abstracted without sacrificing control, security, and usability. Amazon VPC is a service that lets us provision a logically isolated section of the AWS Cloud where we can launch our AWS resources.
+IP addresses enable resources in our VPC to communicate with each other and with resources over the internet. When we create a VPC, you assign an IPv4 CIDR block to it. After we create a VPC, we cannot change the address range. The IPv4 CIDR block might be as large as /16 or as small as /28. The CIDR block of a subnet can be the same as the CIDR block for a VPC. In this case, the VPC and the subnet are the same size. Each CIDR block that we specify, AWS reserves five IP addresses within that block for:
+* Network address
+* VPC local router (internal communications)
+* Domain Name System (DNS) resolution
+* Future use
+* Network broadcast address
+
+A route table contains a set of rules (called routes) that directs network traffic from our subnet. Each route specifies a destination and a target. The destination is the destination CIDR block where we want traffic from your subnet to go. The target is the target that the destination traffic is sent through. By default, every route table that we create contains a local route for communication in the VPC. We can customize route tables by adding routes. We cannot delete the local route entry that is used for internal communications.
+An internet gateway is a scalable, redundant, and highly available VPC component that allows communication between instances in our VPC and the internet. An internet gateway serves two purposes: to provide a target in our VPC route tables for internet-routable traffic, and to perform network address translation for instances that were assigned public IPv4 addresses. To make a subnet public, you attach an internet gateway to our VPC and add a route to the route table to send non-local traffic through the internet gateway to the internet (0.0.0.0/0).
+A network address translation (NAT) gateway enables instances in a private subnet to connect to the internet or other AWS services, but prevents the internet from initiating a connection with those instances. To create a NAT gateway, we must specify the public subnet in which the NAT gateway should reside. You must also specify an Elastic IP address to associate with the NAT gateway when we create it.
+
+# Managing IAM credentials
+IAM lets us manage several types of long-term security credentials for IAM users:
+* Passwords – Used to sign into secure AWS pages, such as the AWS Management Console and the AWS Discussion Forums.
+* Access keys – Used to make programmatic calls to AWS from the AWS APIs, AWS CLI, AWS SDKs, or AWS Tools for Windows PowerShell.
+* Amazon CloudFront key pairs – Used for CloudFront to create signed URLs.
+* SSH public keys – Used to authenticate to AWS CodeCommit repositories.
+
+AWS Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of our username and password. With MFA enabled, when a user signs into an AWS Management Console, they will be prompted for their username and password (the first factor—what they know), as well as for an authentication code from their AWS MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for our AWS account settings and resources.
+When we create IAM policies, we should follow the standard security advice of granting least privilege, or granting only the permissions required to perform a task.
+
+# Creating IAM users (console)
+1. Sign in to the AWS Management Console and open the IAM console.
+2. In the navigation pane, choose Users and then choose Add user.
+3. Type the user name for the new user.
+4. Select the type of access this set of users will have.
+5. On the Set permissions page, specify how you want to assign permissions to this set of new users.
+6. Provide each user with his or her credentials. On the final page you can choose Send email next to each user.
+
+# Creating IAM groups
+1. Sign in to the AWS Management Console and open the IAM console.
+2. In the navigation pane, click Groups and then click Create New Group.
+3. In the Group Name box, type the name of the group.
+4. In the list of policies, select the check box for each policy that you want to apply to all members of the group.
+5. Click Create Group.
+
+# Creating an IAM role (console)
+1. Sign in to the AWS Management Console and open the IAM console.
+2. In the navigation pane of the console, choose Roles and then choose Create role.
+3. Choose the Another AWS account role type.
+4. For Account ID, type the AWS account ID to which you want to grant access to your resources.
+5. IAM includes a list of the AWS managed and customer managed policies in your account. Select the policy to use for the permissions policy or choose Create policy to open a new browser tab and create a new policy from scratch.
+6. For Role name, type a name for your role.
+7. Review the role and then choose Create role.
+
+# Amazon Route 53
+Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses a reliable and cost-effective way to route users to internet applications by translating names into the numeric IP addresses that computers use to connect to each other. Amazon Route 53 also offers Domain Name Registration, and Amazon Route 53 will automatically configure DNS settings for our domains. Amazon Route 53 supports several types of routing policies, which determine how Amazon Route 53 responds to queries:
+* Simple routing (round robin)
+* Weighted round robin routing
+* Latency routing (LBR)
+* Geolocation routing
+* Geoproximity routing
+* Failover routing (DNS failover)
+* Multivalue answer routing
+
+# Amazon CloudFront
+A content delivery network (CDN) is a globally distributed system of caching servers. CDNs also deliver dynamic content that is unique to the requester and is not cacheable. Amazon CloudFront is a fast CDN service that securely delivers data, videos, applications, and application programming interfaces (APIs) to customers globally with low latency and high transfer speeds. It also provides a developer-friendly environment. Amazon CloudFront delivers files to users over a global network of edge locations and Regional edge caches. Amazon CloudFront provides the following benefits:
+* Fast and global
+* Security at the edge
+* Highly programmable
+* Deeply integrated with AWS
+* Cost-effective
+
+# AWS Lambda
+
+AWS Lambda is an event-driven, serverless compute service. Lambda enables us to run code without provisioning or managing servers. We create a Lambda function, which is the AWS resource that contains the code that we upload. We then set the Lambda function to be triggered, either on a scheduled basis or in response to an event. Our code only runs when it is triggered. Lambda supports multiple programming languages, including Java, Go, PowerShell, Node.js, C#, Python, and Ruby. Lambda completely automates the administration. Lambda provides built-in fault tolerance. We can orchestrate multiple Lambda functions for complex or long-running tasks by building workflows with AWS Step Functions. AWS Lambda automatically monitors Lambda functions by using Amazon CloudWatch. An event source is an AWS service or developer-created application that triggers a Lambda function to run. The maximum memory allocation for a single Lambda function is 3,008 MB. The maximum execution time for a Lambda function is 15 minutes.
+
+# Amazon EBS
+Amazon EBS is persistent, mountable storage that can be mounted as a device to an Amazon EC2 instance. Amazon EBS can be mounted to an Amazon EC2 instance only within the same Availability Zone. Only one Amazon EC2 instance at a time can mount an Amazon EBS volume. Amazon EFS is a shared file system that multiple Amazon EC2 instances can mount at the same time. Amazon EBS volumes uses include:
+* Boot volumes and storage for Amazon EC2 instances
+* Data storage with a file system
+* Database hosts
+
+Enterprise applications Amazon EBS features are including snapshots, encryption, and elasticity. Volume storage for all Amazon EBS volume types is charged by the amount you provision in GB per month, until we release the storage. I/O is included in the price of General-Purpose SSD volumes. However, for Amazon EBS magnetic volumes, I/O is charged by the number of requests that we make to our volume. Amazon EBS enables us to back up snapshots of our data to Amazon S3 for durable recovery.
+
+# Amazon S3
+Amazon S3 is persistent storage where each file becomes an object and is available through a Uniform Resource Locator (URL); it can be accessed from anywhere. Amazon S3 refers to files as objects. Objects can be almost any data file, such as images, videos, or server logs. Because Amazon S3 supports objects as large as several terabytes in size, we can even store database snapshots as objects. By default, none of our data is shared publicly. Amazon S3 offers a range of object-level storage classes such as:
+
+* Amazon S3 Standard
+* Amazon S3 Intelligent-Tiering
+* Amazon S3 Standard-Infrequent Access (Amazon S3Standard-IA)
+* Amazon S3 One Zone-Infrequent Access (Amazon S3 One Zone-IA)
+* Amazon S3 Glacier
+* Amazon S3 Glacier Deep Archive
+
+When you create a bucket in AmazonS3, it is associated with a specific AWS Region. When you store data in the bucket, it is redundantly stored across multiple AWS facilities within your selected Region. You can access AmazonS3 through the console, AWS Command Line Interface (AWS CLI), or AWS SDK. WE can also access the data in our bucket directly by using REST-based endpoints.
+
+# Amazon EFS
+Amazon Elastic File System (Amazon EFS) provides simple, scalable, elastic file storage for use with AWS services and on-premises resources. It offers a simple interface that enables us to create and configure file systems quickly and easily. Amazon EFS is built to dynamically scale on demand without disrupting applications. With Amazon EFS, we can create a file system, mount the file system on an Amazon EC2 instance, and then read and write data from to and from our file system.
+
+# Amazon S3 Glacier
+Amazon S3 Glacier is for cold storage for data that is not accessed frequently (for example, when we need long-term data storage for archival or compliance reasons). There are three key Amazon S3 Glacier: Archive, Vault, and Vault access policy. To store and access data in Amazon S3 Glacier, we can use the AWS Management Console. However, only a few operations—such as creating and deleting vaults and creating and managing archive policies—are available in the console. For almost all other operations and interactions with Amazon S3 Glacier, we must use either the Amazon S3 Glacier REST APIs, the AWS Java or .NET SDKs, or the AWS CLI.

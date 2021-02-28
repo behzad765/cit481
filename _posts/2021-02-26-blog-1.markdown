@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "CIT481 Blog 1"
+date:   2021-02-26 19:51:41 -0700
+categories: jekyll blogs
+author: "Behzad"
+---
+
+## Academy Cloud Architecting (ACA)
+
+# Designing the Environment
+Choosing a region involves four main considerations:
+* Data sovereignty and compliance
+* Proximity of users to the data
+* Service and feature availability
+* cost effectiveness
+
+Proximity is a big factor in choosing our Region, especially when latency is critical. In most cases, the latency difference between using the closest Region and the farthest Region is relatively small, but even small differences in latency can impact a customer experience.
+Some services are only available in limited regions. While we strive to make all of our services and features available everywhere, the complications that arise from having a global reach make it challenging to accomplish that goal.
+We want to consider cost effectiveness because service costs vary by Region. Typically, the difference in cost might not be enough to supersede the other three considerations. However, in cases where the differences in latency, compliance, or service availability between Regions are minimal, we might be able to save money by using the lower-cost Region for our environment. 
+Once we have determined where we want to host our data, we should consider how many Availability Zones we should use. The best recommendation is to start with two Availability Zones per Region. If resources in one Availability Zone are unreachable, our application shouldn’t fail. Most applications can be designed to support two Availability Zones, but may not benefit from more, because they use data sources that only support primary and secondary failures.
+
+
+![Two Availibility Zones](/assets/images/2az.png)
+
+This chart shows an example architecture that uses two Availability Zones, an elastic load balancer that distributes traffic between them, and an internet gateway. If one of the web servers becomes unavailable, the load balancer recognizes this change and stops distributing traffic to the unhealthy instance.
+
+![Recommended Availibility Zones](/assets/images/raz.png)
+
