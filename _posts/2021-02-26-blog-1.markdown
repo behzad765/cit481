@@ -21,8 +21,7 @@ We want to consider cost effectiveness because service costs vary by Region. Typ
 Once we have determined where we want to host our data, we should consider how many Availability Zones we should use. The best recommendation is to start with two Availability Zones per Region. If resources in one Availability Zone are unreachable, our application shouldn’t fail. Most applications can be designed to support two Availability Zones, but may not benefit from more, because they use data sources that only support primary and secondary failures.
 
 
-<img src="https://github.com/behzad765/cit481/blob/481-pages/assets/images/2az.JPG?raw=true">
-
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/2az.JPG" alt="Two Availibility Zones">
 This chart shows an example architecture that uses two Availability Zones, an elastic load balancer that distributes traffic between them, and an internet gateway. If one of the web servers becomes unavailable, the load balancer recognizes this change and stops distributing traffic to the unhealthy instance.
 
 ![Recommended Availibility Zones](/assets/images/raz.JPG)
