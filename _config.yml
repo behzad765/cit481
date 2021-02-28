@@ -22,7 +22,7 @@ title: BEHZAD'S WEEKLY BLOGS
 email: behzad.nakhoda.754@my.csun.edu
 description: >- # this means to ignore newlines until "baseurl:"
   In this blog, I will post my activities, projects, ideas, and other subjects about CIT System Design and Implementation in my CIT 481 class.
-baseurl: "/cit481" # the subpath of your site, e.g. /blog
+baseurl: "cit481" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: BNakhoda
 github_username:  behzad765
