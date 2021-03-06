@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "CIT481 Blog 2"
+date:   2021-03-05 19:51:41 -0700
+categories: jekyll blogs
+author: "Behzad"
+---
+
+## Creating a Mail Server Environment with Docker
+For this demonstration, we’re going to be using the Axigen Docker Mail Server as a sample application. As a stateful application, the benefits of turning a mail server into a cloud native, container-based app have only recently become known:
+1. Weak coupling with the underlying operating system (running the container)
+2. Significantly simplified scale-up
+
+There are numerous platforms out there (like AWS, Azure, IBM Cloud, ...) that offer cloud machines on which the same product package can be installed and operated just as easy than on premises. Now, the question is: why not just ‘rehost’?
+* software developers, that can provide their customers with ‘cloud native’ benefits;
+* medium to large companies, harnessing the resources needed for the initial investment;
+* service providers, for whom scalability and maintenance costs reduction are important business factors.
+
+# Creating an Email Server Environment with Docker:
+
+1. Creating a CentOS Docker Instance
+2. Installing Axigen in the Container Instance
+3. Creating an Image from a Container
+4. Setting the Entrypoint in the Container
+5. Running the Created Image
+
+Now that we’ve created a containerized version of our Axigen package, what we have is a re-packaging of the app that allows deployment in the cloud.
