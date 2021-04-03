@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CIT481 Blog 5"
-date:   2021-04-02 19:51:41 -0700
+date:   2021-04-02 18:51:41 -0700
 categories: jekyll blogs
 author: "Behzad"
 ---
