@@ -7,3 +7,10 @@ author: "Behzad"
 ---
 
 ## AWS - Designing for High Availability I
+
+Amazon CTO, Werner Vogels, stated that “Everything fails, all the time”—because of this, we want to design our environment with failure in mind and design backwards.
+High availability is about ensuring that our application has a minimum to no downtime. Availability refers to the amount of time our system is in a functioning condition.  In general terms, our availability is referred to as 100% minus our system's downtime. 
+A common way to solve the problem of a single database server is to create a secondary server, or standby, and replicate the data. Then, if the main database server goes offline, the secondary server can pick up the load. High availability is driven by our requirements. There are two things we have to consider: Recovery Time Objective (RTO) and Recovery Point Objective (RPO). Recovery Time Objective is how long can you be down. Recovery Point Objective is how much data can you afford to lose.
+Fault tolerance, recoverability, and scalability are three primary factors that determine the overall availability of our application. If we look at on-premises high availability versus high availability on AWS, high availability is a lot easier to achieve it in the cloud. In a traditional on-premises data center, it's very expensive to both build out and maintain that secondary infrastructure. This type of solution is really only suitable for absolutely mission-critical applications.
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/servicesHV.JPG" alt="Sevices High Availibility">
