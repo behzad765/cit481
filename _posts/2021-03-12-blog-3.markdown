@@ -20,8 +20,10 @@ Fault tolerance, recoverability, and scalability are three primary factors that 
 <img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/servicesHV.JPG" alt="Sevices High Availibility">
 
 # lastic Load Balancers (ELB)
+
 ELB is a way to manage incoming requests for application traffic across multiple Amazon EC2 instances. These load balancers send traffic to Amazon EC2 instances, and they can also send metrics to Amazon CloudWatch, which is a managed monitoring service. The metrics from Amazon EC2 and ELB can act as triggers, so that if you notice a particularly high latency or that your servers are becoming overused, you can take advantage of Auto Scaling to add more capacity to your web server fleet. ELB supports three types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers. 
 
 <img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/WhyELB.png" alt="Why ELB">
+
 
 <img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/HAwithELB.png" alt="HA with Load Balancing">

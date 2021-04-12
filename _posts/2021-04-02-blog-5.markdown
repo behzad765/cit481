@@ -7,3 +7,48 @@ author: "Behzad"
 ---
 
 ## AWS - Designing for High Availability II
+
+# Scalability
+What is scalability? Scalability is an attribute that describes the ability of a process, network, software, or organization to increase or decrease resource size based on changes in demand. Scalability is important because many applications must maintain steady application performance, even when demand is unpredictable or unexpected. Without enough resources, your applications can experience downtime or sluggish response times. With too many resources, you could end up paying for cloud services that you don't really need. Various scaling options are available that enable you to take full advantage of the elasticity of the cloud, while lowering cloud spend.services you don't really need. Various scaling options are available that enable you to take full advantage of the elasticity of the cloud while lowering cloud spend.
+
+As a best practice of enabling scalability, you can anticipate your needs and have more capacity available before it's too late.
+
+A monitoring solution—such as Amazon CloudWatch—detects that the total load across the fleet of servers has reached a specified threshold of load and sends an alarm. These notices can include "Stayed above 60% CPU utilization for longer than 5 minutes," or anything related to the use of resources. With CloudWatch, you can even design custom metrics based around your specific application, which can trigger scaling in whatever way you need.
+
+When that alarm is triggered, Amazon Elastic Compute Cloud—or Amazon EC2—Auto Scaling immediately launches a new instance.That instance is then ready before capacity is reached, which provides a seamless experience for users because they do not see a service interruption, and creates a better customer experience.Ideally, you should also design this system to scale down after demand drops again, so that you're not running instances that you no longer need.
+
+# AWS CloudWatch
+You can capture this information and monitor your infrastructure by using Amazon CloudWatch.
+
+Amazon CloudWatchmonitors your instances, and it collects and processes raw data into readable, near real-time metrics. The foundation of the web tier includes the use of Elastic Load Balancing load balancers in the architecture. These load balancers send traffic to Amazon EC2 instances, and they can also send metrics to Amazon CloudWatch. Set alarms on any of your metrics to receive notifications, or to take other automated actions when your metric crosses your specified threshold. 
+
+Amazon CloudWatchsends notifications and triggers Auto Scaling actions based on metrics that you specify, such as CPU usage. The metrics from Amazon EC2 and the Elastic Load Balancing can act as triggers, so if you notice a particularly high latency or that servers are becoming overused, you can take advantage of Auto Scaling to add more capacity to your web server fleet. You can use alarms to detect and shut down Amazon EC2 instances that are unused or underused. 
+
+Amazon CloudWatchcollects metrics, turns the metrics into statistics that can be used by CloudWatchalarms, and displays them all  in one place. CloudWatchalarms are based on statistics. Statistics are metric data that is aggregated over specified periods of time. CloudWatchprovides statistics based on the metric data points from your custom data, or from data that other AWS services send to CloudWatch. Aggregations are made using the namespace, metric name, dimensions, and the data point unit of measure, within the time period that you specify.
+
+# Automatic Scaling
+
+Using automatic scaling, you can launch or terminate instances as demand on your application increases or decreases, based on specific conditions. It automatically registers new instances with your Elastic Load Balancing load balancers, when this setting is specified. This service is available across all Availability Zones. 
+
+Auto Scaling integrates with Elastic Load Balancing so that you can attach one or more load balancers to an existing Auto Scaling group. After you attach the load balancer, it automatically registers the instances in the group, and it distributes incoming traffic across the instances. When one Availability Zone becomes unhealthy or is unavailable, Auto Scaling launches new instances in an unaffected Availability Zone. When the unhealthy Availability Zone returns to a healthy state, Auto Scaling automatically redistributes the application instances evenly across all of the Availability Zones for your Auto Scaling group. Auto Scaling does this by attempting to launch new instances in the Availability Zone with the fewest instances. If the attempt fails, however, Auto Scaling attempts to launch instances in other Availability Zones until it succeeds.
+
+
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/AScaling.png" alt="Auto Scaling">
+
+You want to avoid thrashing when you use Auto Scaling. To avoid thrashing, be more cautious about scaling in, and avoid aggressive instance termination. “Scaling in” means that you decrease the computing capacity due to low use. If you have an unpredictable workload, it is possible that the workload might spike right after you scale in. Depending on your launch configuration, it might take a few minutes for Auto Scaling to launch additional instances. Therefore, you should scale out early, and scale in slowly, rather than aggressively. Being cost-conscious is good, but your applications should not suffer.
+
+Set the minimum and maximum capacity parameter values carefully. The desired capacity is different from the minimum capacity. The desired capacity of an Auto Scaling group is the default number of instances that should be running. The minimum capacity of a group is the fewest number of instances the group can have running. For instance, a group with a desired capacity of four will run four instances if no scaling policies are in effect. If the group has a minimum capacity of two, then any scale-in policy that goes into effect cannot reduce the total number of instances in the group below two.
+
+Use lifecycle hooks to perform custom actions when Auto Scaling launches or terminates instances. An example of a lifecycle hook would be when someone uploads something to your Amazon S3 bucket. Statefulapplications require additional automatic configuration of instances that are launched into Auto Scaling groups. Remember that instances can take several minutes after launch before they are fully usable.
+
+# AWS Lambda and Event-Driven Scaling
+
+AWS Lambda is a fully managed compute service that runs stateless code in response to an event or on a time-based interval.It allows you to run code without managing infrastructure, like Amazon EC2 instances and Auto Scaling groups.AWS Lambda lets you run code without provisioning or managing servers. AWS Lambda runs your code on a high-availability compute infrastructure. It performs all of the administration of the compute resources, including server and operating system maintenance, capacity provisioning, automatic scaling, code monitoring, and logging. You only need to  supply your code in one of the languages that AWS Lambda supports, which includes Node.js, Java, Python, C# or .NET Core, and Go.
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Lambda.png" alt="AWS Lambda">
+
+How can AWS Lambda be used with scaling? Examples of scaling-related operations you could perform with AWS Lambda include:
+* Scaling container-based instances, such as Docker, Amazon Elastic Container Service, etc.
+* Scaling more intelligently by using functions, such as analyzing a stream of performance data that looks for patterns instead of events.
+* Replacing some Amazon EC2 instances with Lambda functions where it’s appropriate because Lambda can scale automatically.
