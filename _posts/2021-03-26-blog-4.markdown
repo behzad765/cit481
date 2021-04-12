@@ -7,3 +7,32 @@ author: "Behzad"
 ---
 
 ## AWS - Automating the Infrastructure
+
+# Manual Configuration
+Today, the best practice is to automate the environment—including the provisioning, termination, and configuration of resources to ensure that your system is stable, consistent, and efficient.
+
+In the old pattern, the systems administrator is manually notified when the application server crashes, and then he or she manually launches a new server. 
+
+Repeatability is a big advantage when you treat infrastructure as code. For example, you can take an AWS CloudFormationtemplate and roll out the development environment. You can test automatic scaling and the applications. When the test is successful, that exact template can be reused to launch resources that have been thoroughly tested in the development environment into production.
+
+If you build infrastructure with code, you gain the benefits of repeatability and reusability while you build your environments.  With one template—or a combination of templates—you can build the same complex environments over and over again. When you do this with AWS, you can even create environments that depend on conditions, so that what you build is specific to the context where you created it. For instance, a template can be designed so that different Amazon Machine Images (AMIs) are used, based on whether this template was launched into the development environment or the production environment.
+
+# Infrastructure as Code on AWS with AWS CloudFormation
+
+With AWS CloudFormation, you can treat infrastructure as code. AWS CloudFormationallows you to create templates that can be used to launch, configure, and connect AWS resources with JavaScript Object Notation (JSON) or YAML-formatted templates.
+
+An AWS CloudFormationtemplate allows you to:
+* Treat it as code, and manage it by using your choice of version control, such as  Gitor Subversion.
+* Define an entire application stack—which is all the resources required for your application—in a JSON  template file.
+* Define runtime parameters for a template, such as Amazon Elastic Compute Cloud—or Amazon EC2—Instance Size, Amazon EC2 Key Pair, etc.
+
+# Anatomy of an AWS CloudFormationtemplate
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Ana1.png" alt="Analogy of CloudFormation template 1">
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Ana2.png" alt="Analogy of CloudFormation template 2">
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Ana3.png" alt="Analogy of CloudFormation template 3">
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Ana4.png" alt="Analogy of CloudFormation template 4">
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Ana5.png" alt="Analogy of CloudFormation template 5">
