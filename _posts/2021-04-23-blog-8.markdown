@@ -8,3 +8,52 @@ author: "Behzad"
 
 
 ## Hosting a Website in AWS
+
+# AWS Website Solutions
+
+# Simple Website Hosting
+Simple websites typically consist of a single web server which runs either a Content Management System (CMS), such as WordPress, an eCommerce application, such as Magento, or a development stack, like LAMP. The software makes it easy to build, update, manage, and serve the content of your website.
+Simple websites are best for low to medium trafficked sites with multiple authors and more frequent content changes, such as marketing websites, content websites or blogs. They provide a simple starting point for website which might grow in the future. While typically low cost, these sites require IT administration of the web server and are not built to be highly available or scalable beyond a few servers.
+
+Best for:
+* Websites built on common applications like WordPress, Joomla, Drupal, Magento
+* Websites built on popular development stacks like LAMP, LEMP, MEAN, Node.Js
+* Websites that are unlikely to scale beyond 5 servers
+* Customers who want to manage their own web server and resources
+* Customers who want one console to manage their web server, DNS, and networking
+
+
+# Single Page Web App Hosting
+Static web apps that require only a single load in a web browser are referred to as Single page web apps. All subsequent actions by the user are made available through HTML, JavaScript, and CSS that are pre-loaded in the browser. Backend data is accessed via GraphQL or REST APIs that fetch content from a data store and update the UI without requiring a page reload.
+Single page web apps offer native or desktop app-like performance. They offer all the static website benefits (low cost, high levels of reliability, no server adminstration, and scalability to handle enterprise-level traffic) with dynamic functionality and blazing fast performance.
+
+Best for:
+* Websites built with Single page app frameworks such as React JS, Vue JS, Angular JS, and Nuxt.
+* Websites built with static site generators such as Gatsby JS, React-static, Jekyll, and Hugo.
+* Progressive web apps or PWAs
+* Websites that do not contain server-side scripting, like PHP or ASP.NET 
+* Websites that have serverless backends.
+
+
+# Simple Static Website Hosting
+Static websites deliver HTML, JavaScript, images, video and other files to your website visitors and contain no server-side application code, like PHP or ASP.NET. They typically are used to deliver personal or marketing sites.
+Static websites are very low cost, provide high-levels of reliability, require no server administration, and scale to handle enterprise-level traffic with no additional work.
+
+Best for:
+* Websites that do not contain server-side scripting, like PHP or ASP.NET 
+* Websites that change infrequently with few authors
+* Websites need to scale for occasional intervals of high traffic
+* Customers who do not want to manage infrastructure
+
+
+# Enterprise Web Hosting
+Enterprise websites include very popular marketing and media sites, as well as social, travel, and other application-heavy websites. For example, Lamborghini, Coursera, and Nordstrom use AWS to host their websites. Enterprise websites need to dynamically scale resources and be highly available to support the most demanding and highly trafficked websites.
+Enterprise websites use multiple AWS services and often span multiple data centers (called Availability Zones). Enterprise websites built on AWS provide high levels of availability, scalability, and performance, but require higher amounts of management and administration than static or simple websites.
+
+Best for:
+* Websites that use multiple web servers across at least two data centers
+* Websites that need to scale using load balancing, autoscaling, or external databases
+* Websites that require sustained high CPU utilization
+* Customers who need maximum control and flexibility for their web server configuration and administration
+
+
