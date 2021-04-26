@@ -9,3 +9,74 @@ author: "Behzad"
 
 ## Designing Web Scale Media
 
+# Storing Web-Accessible Content with Amazon S3
+
+Web-based applications must be available, and they shouldn’t take long to load. If your applications are unavailable, it could lead to revenue loss. It could also affect customer loyalty and your brand image. A 1-second delay can translate into a 16 percent decrease in customer satisfaction. Performance translates to higher page views, better customer experience, and higher conversion rates.
+
+Delivery of large files from a web server can become a problem in terms of network latency.The use of Amazon S3 eliminates the need to worry about network loads and data capacity on your web servers. You can also use Amazon CloudFront, which is a content delivery network—or CDN—that can be used as a global caching layer in front of Amazon S3 to accelerate content to your end users. User-generated content needs to be distributed across all your web servers.
+
+One solution is to store static asset files—such as Cascading Style Sheets, or CSS; multimedia, and others—in Amazon S3 and serve the files from there.Objects that are stored in Amazon S3 can be accessed directly by users if the bucket is public. Amazon S3 performs backups in at least three different data centers, and thus has extremely high durability. Data that is stored in an Amazon S3 bucket is replicated across multiple data centers in a geographical region. It is important to carefully select the AWS Region where you store an object because response latencies grow when requests have to travel long distances over the internet.
+
+Amazon S3 is object file storage, and it behaves like a flat file system. It automatically scales to high request rates.  There are no limits to the number of prefixes in a bucket. It is simple to increase your read or write performance exponentially.
+
+Keys partition the key name space in a bucket, and they define the partition that they are stored in. The most significant part is the first 3-4 characters of a key, and this number might increase along with the amount of objects that are stored in a bucket. The best practice of coming up with good Amazon S3 keys is to randomize their prefixes as much as possible so that they can be better distributed across a bucket's partitions.
+
+
+# Amazon CloudFront
+
+Amazon CloudFrontis a web service that speeds the distribution of static and dynamic web content to users,—such as Hypertext Markup Language, or HTML, files; CSS files; JavaScript files; and image files. Key features for CloudFrontinclude:
+
+* TCP/IP optimizations for the network path.
+* Keep-alive connections to reduce round-trip time.
+* SSL/TLS termination that is close to viewers.
+* POST and PUT upload optimizations.
+* Latency-based routing.
+* And regional edge caches.
+
+How can you enable Amazon CloudFront? 
+First, you specify origin servers, like an Amazon S3 bucket or your own HTTP server.  CloudFrontgets your files from the origin servers, and the files will then be distributed from CloudFrontedge locations all over the world. 
+Second, you upload your files to your origin servers. Your files, which are also known as objects, typically include webpages, images, and media files. 
+Third, you create a CloudFrontdistribution, which tells CloudFrontwhich origin servers to get your files from when users request the files through your website or application. At the same time, you specify details, such as whether you want CloudFrontto log all requests, and whether you want the distribution to be enabled as soon as it's created.
+Fourth, CloudFrontassigns a domain name to your new distribution. You can see the domain name in the CloudFrontconsole. The domain name can also be returned in the response to a programmatic request, like a request from an application programming interface, or API.
+Fifth, CloudFrontsends your distribution's configuration—but not your content—to all of its edge locations. -collections of servers in geographically dispersed data centers where CloudFrontcaches copies of your objects.
+
+How can you set content to expire? There are three ways to retire cached content:
+* Use time to live, or TTL
+* Change the object name
+* Or invalidate the object
+
+
+
+# NoSQL databases
+
+NoSQL databases:
+* Can be an alternative to relational databases for some types of applications.
+* Can process large amounts of data with high availability, depending on the NoSQL solution, and its configuration and architecture.
+* Form a broad category with different implementations and data models.
+* Features distributed fault tolerance.
+
+NoSQL databases can offer increases in flexibility, availability, scalability, and performance. A few more characteristics of Amazon DynamoDBinclude its predictable performance with a provisioned throughput model. It’s also durable and available for consistent, disk-only writes and on-demand backups.Amazon DynamoDBis a fully managed NoSQL database service with little administration. 
+
+
+# Amazon RDS
+
+Amazon RDS is a good option for developers because it allows developers to focus on innovation, such as query construction and optimization.
+
+Using Amazon RDS lets you offload the following operational burdens responsibilities:
+* Migration
+* Backup and recovery
+* Patches
+* Software upgrades
+* Storage upgrades
+* Frequent server upgrades
+* And hardware crashes
+
+
+Amazon Aurora is a relational database that is delivered by using service-oriented architectures.
+* It is similar to how Amazon DynamoDBis a managed version of an Amazon EC2-hosted NoSQL engine.
+* It is scalable and highly available, and it uses Amazon S3.
+* It has drop-in compatibility with MySQL v5.6.
+* Existing applications “just work.”
+* Amazon RDS customers that use MySQL can select options for migration.
+* Amazon EC2 or on-premises MySQL users can import their data file.
+* And it is compatible with PostgreSQL.
