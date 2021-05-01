@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "CIT481 Blog 9"
+date:   2021-04-30 18:51:41 -0700
+categories: jekyll blogs
+author: "Behzad"
+---
+
+
+## GitHub Hello World Tutorial
+
+GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This tutorial teaches you GitHub essentials like repositories, branches, commits, and Pull Requests. You’ll create your own Hello World repository and learn GitHub’s Pull Request workflow, a popular way to create and review code.
+This tutorial teaches you GitHub essentials like repositories, branches, commits, and Pull Requests. You’ll create your own Hello World repository and learn GitHub’s Pull Request workflow, a popular way to create and review code.
+
+# Step 1. Create a Repository
+
+A repository is usually used to organize a single project. Repositories can contain folders and files, images, videos, spreadsheets, and data sets – anything your project needs.
+
+# To create a new repository
+In the upper right corner, next to your avatar or identicon, click + and then select New repository.
+Name your repository `hello-world`.
