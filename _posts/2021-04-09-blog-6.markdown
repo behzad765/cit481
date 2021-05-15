@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "CIT481 Blog 6"
+date:   2021-04-09 19:51:41 -0700
+categories: jekyll blogs
+author: "Behzad"
+---
+
+## Cost Optimization in Amazon AWS
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Cost-opt-principles.png" alt="Cost Optimization Principles">
+
+Cost optimization is the ability to avoid or eliminate unneeded costs or suboptimal resources. You want to make sure that the resources you are using are right-sized for the project so that they are cost-effective, and that resources are matched to supply and demand. You should also be aware of what you are spending, and also make sure that resources are optimized over time.
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/Design_P.png" alt="Design Principles">
+
+In the cloud, you can follow a number of principles that help you achieve cost optimization.
+
+* Adopt a consumption model: You can pay only for the computing resources that you consume, and increase or decrease usage depending on business requirements, not by using elaborate forecasting. For example, development and test environments are typically only used for 8 hours a day during the work week. You can stop these resources when they are not in use for a potential cost savings of 75 percent, or 40 hours versus 168 hours.
+* Measure overall efficiency: You can measure the business output of the system and the costs that are associated with delivering it. Use this measure to understand the gains you make from increasing output and reducing costs.
+* *Stop spending money on data center operations: We do the heavy lifting of racking, stacking, and powering servers, so you can focus on your customers and business projects instead of IT infrastructure.
+* *Analyze and attribute expenditures: The cloud makes it more straightforward to accurately identify the usage and cost of systems, which then allows transparent attribution of IT costs to individual business owners. This helps measure return on investment—or ROI—and gives system owners an opportunity to optimize their resources and reduce costs.
+* Use managed services to reduce cost of ownership: In the cloud, managed services remove the operational burden of maintaining servers for tasks like sending email or managing databases. And because managed services operate at cloud scale, they can offer a lower cost per transaction or service.
+
+
+The following services and features are important in the four areas of cost optimization:
+* Cost-effective resources: You can use Reserved Instances and prepaid capacity to reduce your costs. You can use Cost Explorer to see patterns in how much you spend on AWS resources over time, identify areas that need further inquiry, and see trends that you can use to understand your costs.
+* Matched supply and demand: AWS Automatic Scaling allows you to add or remove resources to match demand without overspending. * Expenditure awareness: Amazon CloudWatchalarms and Amazon Simple Notification Service—or Amazon SNS—notifications will warn you if you go over, or are forecasted to go over, your budgeted amount.
+* Optimizing over time: The AWS Blog and What’s New section on the AWS website are resources for learning about newly launched features and services. AWS Trusted Advisor inspects your AWS environment and finds opportunities to save money by eliminating unused or idle resources, or committing to Reserved Instance capacity.
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/purchasing_opt.png" alt="Purchasing Options">
+
+
+As part of the AWS Free Tier, new AWS customers can get started with Amazon EC2 and some other services each month for up to one year after sign-up. What’s available for free through the AWS Free Tier varies from service to service.
+
+Amazon EC2 usage of Amazon Linux and Ubuntu-based instances that are launched in On-Demand, Reserved and Spot form will be billed on 1-second increments, with a minimum of 60 seconds.
+
+On-Demand Instances let you pay for compute capacity with no long-term commitments or upfront payments.
+
+Spot Instances allow you to purchase compute capacity with no upfront commitment, and through rates that are usually lower than the On-Demand rate. If the Spot Instance price moves higher than your maximum price, your instance will be shut down by Amazon EC2. 
+
+Dedicated Instances are Amazon EC2 instances that run in a virtual private cloud, or VPC, on hardware that's dedicated to a single customer. Your Dedicated Instances are physically isolated at the host hardware level from instances that belong to other AWS accounts. Dedicated Instance pricing has two components. The first component is an hourly per instance usage fee, and the second component is a dedicated per region fee. Note: You pay this once per hour regardless of how many Dedicated Instances you run.
+
+Dedicated Hosts are physical Amazon EC2 servers with instance capacity that is fully dedicated for your use. Dedicated Hosts can help you reduce costs by allowing you to use your existing server-bound software licenses. Dedicated Hosts can be purchased On-Demand or as a Reserved Instance. Regardless of the quantity or the size of instances that you choose to launch on a particular Dedicated Host, you pay hourly for each active Dedicated Host, and you are not billed for instance usage.
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/On-Demand.png" alt="Amazon EC2 On-Demand Instances">
+
+Amazon EC2 On-Demand Instances allow you to pay for compute capacity per second for Linux, or by the hour for all other operating systems, or OSs. There are no long term commitments and no upfront payments. You can increase or decrease your compute capacity depending on the demands of your application.
+
+Amazon EC2 On-Demand Instances are recommended for:
+* Users who want the low cost and flexibility of Amazon EC2 without an upfront payment or long-term commitment.
+* Applications with short term, spiky, or unpredictable workloads that cannot be interrupted.
+* Applications that are being developed or tested on Amazon EC2 for the first time.
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/dedicated.png" alt="Dedicated Instances and Hosts">
+
+Dedicated Instances are Amazon EC2 instances that run in a virtual private cloud, or VPC, on hardware that is dedicated to a single customer for additional isolation. These instances are physically isolated at the host hardware level from instances that are not Dedicated Instances and from instances that belong to other AWS accounts. Multiple Dedicated Instances for a single customer can share the same physical device.
+
+A Dedicated Host is a physical Amazon EC2 server with instance capacity that is fully dedicated for your use. Dedicated Hosts can help you reduce costs by allowing you to use your existing server-bound software licenses, including Windows Server, SQL Server, and SUSE Linux Enterprise Server—all subject to your license terms. Dedicated Hosts can also help you meet compliance requirements, and they can be purchased On-Demand, or on an hourly basis. Reservations can provide up to a 70 percent discount compared to the On-Demand price.
+
+Benefits of Dedicated Host include:
+* Save Money on Licensing Costs: With Dedicated Hosts, you can save money by using your own per-socket or per-core software licenses in Amazon EC2.
+* Help Meet Compliance and Regulatory Requirements: With Dedicated Hosts, you can place your instances in a VPC on a specific, physical server. This scenario enables you to deploy instances by using configurations that help address requirements for corporate compliance and regulations.
