@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "CIT481 Blog 10"
+date:   2021-05-06 18:51:41 -0700
+categories: jekyll blogs
+author: "Behzad"
+---
+
+## Register, Host and Deploy Website on AWS
+
+Today, is very easier to create and maintain a website without spending much as it was in the past. 
+
+# How to host a customized website on Amazon S3?
+1. First of all, visit  https://aws.amazon.com/ and sign in by filling the details.
+2. Now login to AWS console, go to services option and search for S3. To store your files in S3, you need to create a bucket. Buckets are nothing, but the folders to save your files and you have to name them.
+3. After this, you need to select a region where you want to store your data. Click next; You need to grant public access to the bucket. After this, you will be able to view the configuration of the bucket, review it, and then click on create a bucket.
+4. Now you can upload your existing website to S3. Select the bucket name and look for the upload button on the top left. You can simply add the files or drag the files to the bucket. You can select your storage class and then click upload.
+5. Click on the static website hosting option, and then select use this bucket to host a website. Click Save.
+6. Click on the static website option again. The endpoint will appear, and by clicking on it, you can check your website.
+
+
+# How to register your domain on Route53?
+1. First of all, log in to AWS console and then go to services and look for Route 53.
+2. Now click the register domain option. Choose a domain name and look for the availability. After selecting the domain name. Fill your contact details and verify and purchase that domain.
+3. Once the domain is created, go to create a host zones section and click on your domain.
+4. Now you need to create a recordset for routing internet traffic to your CloudFront. Before, this you need to specify a few things:
+
+* **Type.** Select **A** – IPv4 address;
+* **Alias.** Select **Yes**;
+* **Alias Target.** Enter the domain name of your CloudFront distribution;
+* **Routing Policy.** Leave the default value of Simple;
+* **Evaluate Target Health.** Select **No**.
+* Click **Create**.
+
+Wait for a couple of minutes, and your traffic will be routed to CloudFront.
+
+# Steps to deploy the website on AWS
+
+* The first step is to install WordPress on an AWS EC2 using a stack. 
+* You need to install stacks which are already configured by company Bitnami. All you need to install them to your EC2 virtual machine.
+
+<img src="https://raw.githubusercontent.com/behzad765/cit481/481-pages/assets/images/deploy.png" alt="Steps to deploy the website">
+
+# Launch EC2:
+
+* After creating an Amazon Web Services account, click the services at the top of the page and then search for EC2.
+* From the EC2 dashboard, click on the Launch instance to deploy a new EC2 instance.
+* Now as your EC2 has been deployed, then install WordPress.
+* For this, you need to go to the AWS marketplace and then search for WordPress and select WordPress certified by Bitnami.
+* View the details of the Bitnami WordPress page and click continue.
+
+# Choose the instance page:
+* Select the instance ( virtual machine) hardware t2, a micromachine, if you want to use the free tier services.
+
+# Configure instance details:
+* On the configure instance page, choose the Auto-assign Public IP option and leave the other fields as it is.
+* Review instance details :
+* After reviewing the details, click the Launch button.
+
+# Generate SSH Key:
+* A popup window will appear, Create a new SSH key pair by the following pop up window instruction. Also, download and save the key pair. 
+* Next, click the Launch Instances button.
+
+# Obtain WordPress credentials:
+* To login to your new WordPress installation, you need to obtain your WordPress credentials. You need to follow below steps to get them.
+* Click on the services at the top of Launch status page.
+* Now, under the compute tab, click on the EC2 link
+* After that, click on the instances link. On this page, click the Actions button, then go to settings and click on Get system Log.
+* Navigate to the bottom of the Instance Log. Search and copy your Bitnami application password.
+
+# Copy external IP:
+* Copy the password and exit out of the instance log and search for your public IP address and copy it.
+
+# Log in to WordPress:
+* In the new window, paste the Pubic IP address followed by wp-admin. You will be directed to the WordPress login page. Enter the credentials, and here it is, you have successfully logged in to WordPress.
+
